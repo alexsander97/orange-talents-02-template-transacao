@@ -23,9 +23,6 @@ public class TransactionController {
     @Autowired
     private TransactionRepository transactionRepository;
 
-    @PersistenceContext
-    private EntityManager entityManager;
-
     @GetMapping("/card/{idCard}")
     public ResponseEntity<?> list(@PathVariable("idCard") String idCard) {
         if (!transactionRepository.existsByCardIdCard(idCard)) {
